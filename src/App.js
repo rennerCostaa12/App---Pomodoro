@@ -23,6 +23,7 @@ import {
 import Buttons from './components/Buttons';
 import CountdownTimer from './components/CountdownTimer';
 import ConfigApp from './components/ConfigApp';
+import ModalSetting from './components/modalSetting';
 
 // SOUND
 import SoundAlarm from './sounds/soundarlame2.wav'
@@ -33,10 +34,10 @@ import './icons/Icons';
 
 function App() {
 
-  const [duration, setDuration] = useState(1500);
+  const [duration, setDuration] = useState(25 * 60);
   const [player, setPlayer] = useState(false);
   const [key, setKey] = useState(0);
-
+  
   const formatRemainingTime = (timer) => {
     const minutes = Math.floor((timer % 3600) / 60);
     const seconds = timer % 60;
@@ -64,19 +65,19 @@ function App() {
 
 
   const PomodoroMode = () => {
-    setDuration(1500); // DURAÇÂO DO TIMER
+    setDuration(25 * 60); // DURAÇÂO DO TIMER
     setKey(prevKey => prevKey + 1); // RESTARTA O TIMER
     setPlayer(false); // VALOR BOOLEAN DO PAUSE
   }
 
   const ShortBreakMode = () => {
-    setDuration(300); // DURAÇÂO DO TIMER
+    setDuration(5*60); // DURAÇÂO DO TIMER
     setKey(prevKey => prevKey + 1); // RESTARTA O TIMER
     setPlayer(false); // VALOR BOOLEAN DO PAUSE
   }
 
   const LongBreakMode = () => {
-    setDuration(900); // DURAÇÂO DO TIMER
+    setDuration(15*60); // DURAÇÂO DO TIMER
     setKey(prevKey => prevKey + 1); // RESTARTA O TIMER
     setPlayer(false); // VALOR BOOLEAN DO PAUSE
   }
@@ -90,7 +91,13 @@ function App() {
   }
 
   const OpenModalConfigApp = () =>{
-    alert('Open Modal!');
+    const Container_Modal = document.getElementById('container-modal');
+    const Btn_Close_Modal = document.getElementById('btn-close-modal');
+    Container_Modal.style.display = 'block';
+
+    Btn_Close_Modal.addEventListener('click', (e)=>{
+      Container_Modal.style.display = 'none';
+    })
   }
 
   return (
@@ -125,9 +132,11 @@ function App() {
       <ContainerBtnConfig>
         <ContentBtnConfig>
           <ConfigApp funcao={OpenModalConfigApp} title_btn="Configurar" />
-        </ContentBtnConfig>  
+        </ContentBtnConfig> 
       </ContainerBtnConfig>
-  
+
+      <ModalSetting valuePomodoroMode={duration} valueShortBreakMode={duration} valueLongBreakMode={duration}/>
+
       </Content>
     </Container>
   );
