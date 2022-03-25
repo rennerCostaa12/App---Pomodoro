@@ -10,4 +10,9 @@ Um app sem muitas funcionalidades... ainda, é mais para cronometrar o tempo mes
 <h2>Ciclo do Pomodoro</h2>
 <img src="https://www.napratica.org.br/wp-content/uploads/2021/04/ciclo-tecnica-pomodoro-1024x683.jpg" alt="Imagem do ciclo do pomodoro" style="width: 500px">
 
+<h2>Interface</h2>
+
+<img src="https://user-images.githubusercontent.com/86391973/160156552-eb1b2eaa-b374-49b3-8f43-5a9f1acfc4ab.png" style="width: 500px">
+
+obs: versao mobile ainda está em produção
 
