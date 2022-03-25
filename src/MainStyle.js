@@ -38,8 +38,7 @@ export const ContainerButtons = styled.div`
 `
 
 export const ContainerBTNTIMER = styled.div`
-    position: absolute;
-    top: 400px;
+
 `
 
 export const ContainerTimer = styled.div`

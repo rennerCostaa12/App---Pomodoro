@@ -23,7 +23,6 @@ import {
 import Buttons from './components/Buttons';
 import CountdownTimer from './components/CountdownTimer';
 import ConfigApp from './components/ConfigApp';
-import ModalSetting from './components/modalSetting';
 
 // SOUND
 import SoundAlarm from './sounds/soundarlame2.wav'
@@ -91,14 +90,10 @@ function App() {
   }
 
   const OpenModalConfigApp = () =>{
-    const Container_Modal = document.getElementById('container-modal');
-    const Btn_Close_Modal = document.getElementById('btn-close-modal');
-    Container_Modal.style.display = 'block';
-
-    Btn_Close_Modal.addEventListener('click', (e)=>{
-      Container_Modal.style.display = 'none';
-    })
+    // LOGIN OPEN MODAL
   }
+
+
 
   return (
     <Container>
@@ -111,9 +106,9 @@ function App() {
           <Buttons function_button={ShortBreakMode} name_button="Short break" />
           <Buttons function_button={LongBreakMode} name_button="Long break" />
         </ContainerButtons>
-
+        
         <ContainerProgressBar>
-          <ContentProgessBar>
+          <ContentProgessBar id='teste'>
             <CountdownTimer
               playBoolean={player}
               durationTimer={duration}
@@ -134,8 +129,6 @@ function App() {
           <ConfigApp funcao={OpenModalConfigApp} title_btn="Configurar" />
         </ContentBtnConfig> 
       </ContainerBtnConfig>
-
-      <ModalSetting valuePomodoroMode={duration} valueShortBreakMode={duration} valueLongBreakMode={duration}/>
 
       </Content>
     </Container>
